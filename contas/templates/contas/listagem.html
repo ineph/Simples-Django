@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Listagem</h1>
+    <ul>
+        {%for transacao in transacoes%}
+        <li>
+            <a href="{%url 'url_update' transacao.id%}">
+            <p>Descrição: {{transacao.descricao}}</p>
+            <p>Data:{{transacao.data_transacao}}</p>
+            <p>Valor:{{transacao.valor}}</p>
+            <p>Categoria:{{transacao.categoria}}</p>
+            <p>Observações:{{transacao.observacoes}}</p>
+            <br>
+            </a>
+        </li>
+        {%endfor%}
+    </ul>
+    <a href="{%url 'url_nova'%}">Nova Transação</a>
+</body>
+</html>
